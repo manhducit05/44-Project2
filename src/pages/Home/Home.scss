@@ -1,0 +1,137 @@
+.home {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+
+    .card {
+      flex: 1;
+      border-radius: 20px;
+      padding: 20px;
+      color: #fff;
+      min-height: 180px;
+
+      .number {
+        margin-top: 20px;
+        font-size: 18px;
+        letter-spacing: 2px;
+      }
+
+      &.blue-card {
+        background: linear-gradient(107.38deg, #4C49ED 2.61%, #0A06F4 101.2%);
+
+      }
+
+      &.white-card {
+        background: #f9fafb;
+        color: #333;
+        border: 1px solid #ddd;
+      }
+    }
+  }
+
+  .right-side {
+
+    .recent,
+    .expense {
+      margin-bottom: 20px;
+    }
+
+    .recent {
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0;
+
+          .negative {
+            color: red;
+          }
+
+          .positive {
+            color: green;
+          }
+        }
+      }
+    }
+
+    .expense {
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .bottom {
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+
+    .activity,
+    .balance {
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+
+    .transfer {
+      .people {
+        display: flex;
+        gap: 15px;
+        margin: 15px 0;
+
+        .person {
+          text-align: center;
+
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .transfer-form {
+        display: flex;
+        gap: 10px;
+
+        input {
+          flex: 1;
+          border-radius: 25px;
+          padding: 8px 15px;
+          border: 1px solid #ccc;
+        }
+
+        button {
+          background: #3b82f6;
+          border: none;
+          color: #fff;
+          border-radius: 25px;
+          padding: 8px 20px;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
+}
