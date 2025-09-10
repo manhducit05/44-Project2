@@ -1,93 +1,170 @@
 import React from "react";
-import "./Home.scss";
-
+import "./Home.css";
+import { Col, Row } from 'antd';
 const Home = () => {
   return (
     <div className="home">
       {/* My Cards */}
-      <div className="card-section">
-        <div className="section-header">
-          <h3>My Cards</h3>
-          <a href="#">See All</a>
-        </div>
-        <div className="cards">
-          <div className="card blue-card">
-            <p className="balance">Balance</p>
-            <h2>$5,756</h2>
-            <p className="holder">CARD HOLDER<br />Eddy Cusuma</p>
-            <p className="valid">VALID THRU<br />12/22</p>
-            <p className="number">3778 **** **** 1234</p>
-          </div>
-          <div className="card white-card">
-            <p className="balance">Balance</p>
-            <h2>$5,756</h2>
-            <p className="holder">CARD HOLDER<br />Eddy Cusuma</p>
-            <p className="valid">VALID THRU<br />12/22</p>
-            <p className="number">3778 **** **** 1234</p>
-          </div>
-        </div>
+      <div className="section-1">
+        <Row justify="space-between" gutter={40}>
+          <Col xs={24} lg={16}>
+            <div className="dual-card mobile-center">
+              <Row gutter={50} wrap={false}>
+                <Col>
+                  <div className="title">My Cards</div>
+                  <div className="card blue-card">
+                    <p className="balance">Balance</p>
+                    <h2 className="money">$5,756</h2>
+                    <p className="holder">CARD HOLDER<br /><span className="name">Eddy Cusuma</span></p>
+                    <p className="valid">VALID THRU<br /><span className="ratio">12/22</span></p>
+                    <p className="number">3778 **** **** 1234</p>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="title see-all">See All</div>
+                  <div className="card white-card">
+                    <p className="balance">Balance</p>
+                    <h2 className="money">$5,756</h2>
+                    <p className="holder">CARD HOLDER<br /><span className="name">Eddy Cusuma</span></p>
+                    <p className="valid">VALID THRU<br /><span className="ratio">12/22</span></p>
+                    <p className="number">3778 **** **** 1234</p>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+          </Col>
+          <Col xs={24} lg={8}>
+            {/* Right Side */}
+            <div className="right-side">
+              <div className="mobile-center">
+                <div className="recent">
+                  <div className="title">Recent Transaction</div>
+                  <div className="list-payment">
+                    <Row className="item" gutter={10} align="middle">
+                      <Col span={6}>
+                        <img className="icon" src='/images/home/icon1.svg' alt="icon-payment" />
+                      </Col>
+                      <Col span={12}>
+                        <div className="infor">Deposit from my Card</div>
+                        <div className="date">28 January 2021</div>
+                      </Col>
+                      <Col span={6}>
+                        <div className="negative">- $850</div></Col>
+                    </Row>
+                    <Row className="item" gutter={10} align="middle">
+                      <Col span={6}>
+                        <img className="icon" src='/images/home/icon2.svg' alt="icon-payment" />
+
+                      </Col>
+                      <Col span={12}>
+                        <div className="infor">Deposit Paypal</div>
+                        <div className="date">28 January 2021</div>
+                      </Col>
+                      <Col span={6}>
+                        <div className="positive">+ $2,500</div>
+                      </Col>
+                    </Row>
+                    <Row className="item" gutter={10} align="middle">
+                      <Col span={6}>
+                        <img className="icon" src='/images/home/icon3.svg' alt="icon-payment" />
+                      </Col>
+                      <Col span={12}>
+                        <div className="infor">Jemi Wilson</div>
+                        <div className="date">28 January 2021</div>
+                      </Col>
+                      <Col span={6}>
+                        <div className="positive">+ $5,400</div>
+                      </Col>
+                    </Row>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Col>
+        </Row>
+
+
+
       </div>
 
-      {/* Right Side */}
-      <div className="right-side">
-        <div className="recent">
-          <h3>Recent Transaction</h3>
-          <ul>
-            <li>
-              <span>Deposit from my Card</span>
-              <span className="negative">- $850</span>
-            </li>
-            <li>
-              <span>Deposit Paypal</span>
-              <span className="positive">+ $2,500</span>
-            </li>
-            <li>
-              <span>Jemi Wilson</span>
-              <span className="positive">+ $5,400</span>
-            </li>
-          </ul>
-        </div>
+      <div className="section-2">
+        <Row justify="space-between" gutter={40}>
+          <Col xs={24} lg={16}>
+            <div className="activity">
+              <div className="title">Weekly Activity</div>
+              <img src="/images/home/chart1.svg" alt="Weekly Activity" />
+            </div>
+          </Col>
+          <Col xs={24} lg={8}>
+            <div className="expense">
+              <div className="title">Expense Statistics</div>
+              <div className="mobile-center">
+                <img src="/images/home/chart2.svg" alt="Expense Chart" />
+              </div>
+            </div>
+          </Col>
+        </Row>
       </div>
-
-      {/* Bottom Section */}
-      <div className="bottom">
-        <div className="activity">
-          <h3>Weekly Activity</h3>
-          <img src="/images/home/chart1.svg" alt="Weekly Activity" />
-        </div>
-        <div className="expense">
-          <h3>Expense Statistics</h3>
-          <img src="/images/home/chart2.svg" alt="Expense Chart" />
-        </div>
-
-
-      </div>
-      <div>
-        <div className="transfer">
-          <h3>Quick Transfer</h3>
-          <div className="people">
-            <div className="person">
-              <img src="/images/home/avatar1.svg" alt="user" />
-              <p>Livia Bator<br /><small>CEO</small></p>
+      <div className="section-3">
+        <Row justify="space-between" gutter={40}>
+          <Col xs={24} lg={10}>
+            <div className="title">Quick Transfer</div>
+            <div className="mobile-center">
+              <div className="transfer-card">
+                <div className="people">
+                  <Row gutter={25}>
+                    <Col>
+                      <div className="person">
+                        <img src="/images/home/avatar1.svg" alt="user" />
+                        <div>Livia Bator</div>
+                        <div>CEO</div>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div className="person">
+                        <img src="/images/home/avatar2.svg" alt="user" />
+                        <div>Randy Press</div>
+                        <div>Director</div>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div className="person">
+                        <img src="/images/home/avatar3.svg" alt="user" />
+                        <div>Workman</div>
+                        <div>Designer</div>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+                <div className="transfer-form">
+                  <Row align="middle">
+                    <Col span={8}>
+                      <div className="transfer-title">Write Amount</div>
+                    </Col>
+                    <Col span={16}>
+                      <div className="groupBtn">
+                        <input type="text" placeholder="Write Amount" value="525.50" />
+                        <div className="btn">
+                          <img src="/images/home/planeiconbtn.svg" alt="icon-transfer" />
+                          Send
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+              </div>
             </div>
-            <div className="person">
-              <img src="/images/home/avatar2.svg" alt="user" />
-              <p>Randy Press<br /><small>Director</small></p>
+          </Col>
+          <Col xs={24} lg={14}>
+            <div className="balance">
+              <div className="title">Balance History</div>
+              <div className="mobile-center">
+                <img src="/images/home/chart3.svg" alt="Balance History" />
+              </div>
             </div>
-            <div className="person">
-              <img src="/images/home/avatar3.svg" alt="user" />
-              <p>Workman<br /><small>Designer</small></p>
-            </div>
-          </div>
-          <div className="transfer-form">
-            <input type="text" placeholder="Write Amount" value="525.50" />
-            <button>Send</button>
-          </div>
-        </div>
-        <div className="balance">
-          <h3>Balance History</h3>
-          <img src="/images/home/chart3.svg" alt="Balance History" />
-        </div>
+          </Col>
+        </Row>
+
       </div>
     </div>
   );

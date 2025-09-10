@@ -55,90 +55,92 @@ export default function MainLayout() {
   ];
 
   return (
-    <Layout className="main-layout">
-      {/* Sidebar */}
-      <Sider
-        width={220}
-        className={`sidebar ${collapsed ? "collapsed" : ""}`}
-        trigger={null}
-        collapsible
-      >
-        <div className="logo">
-          <img alt="logo" src="/images/logo.png" />
-        </div>
+    <div className="container">
+      <Layout className="main-layout">
+        {/* Sidebar */}
+        <Sider
+          width={220}
+          className={`sidebar ${collapsed ? "collapsed" : ""}`}
+          trigger={null}
+          collapsible
+        >
+          <div className="logo">
+            <img alt="logo" src="/images/logo.png" />
+          </div>
 
-        {/* Close button chỉ hiện trên mobile */}
-        <button className="close-btn" onClick={() => setCollapsed(false)}>
-          <CloseOutlined />
-        </button>
+          {/* Close button chỉ hiện trên mobile */}
+          <button className="close-btn" onClick={() => setCollapsed(false)}>
+            <CloseOutlined />
+          </button>
 
-        <Menu
-          mode="inline"
-          selectedKeys={[location.pathname]}
-          items={menuItems.map((item) => ({
-            key: item.key,
-            icon: (
-              <img
-                src={
-                  location.pathname === item.key
-                    ? item.icon.active
-                    : item.icon.default
-                }
-                alt={item.label}
-                className="menu-icon"
+          <Menu
+            mode="inline"
+            selectedKeys={[location.pathname]}
+            items={menuItems.map((item) => ({
+              key: item.key,
+              icon: (
+                <img
+                  src={
+                    location.pathname === item.key
+                      ? item.icon.active
+                      : item.icon.default
+                  }
+                  alt={item.label}
+                  className="menu-icon"
+                />
+              ),
+              label: <Link to={item.key}>{item.label}</Link>,
+              onClick: () => setCollapsed(false), // đóng sidebar trên mobile
+            }))}
+          />
+        </Sider>
+
+        {/* Right Layout */}
+        <Layout className="right-layout">
+          <div className="header">
+            {/* Hàng 1 */}
+            <div className="top-row">
+              <Button
+                className="menu-btn"
+                icon={<MenuOutlined />}
+                onClick={() => setCollapsed(!collapsed)}
               />
-            ),
-            label: <Link to={item.key}>{item.label}</Link>,
-            onClick: () => setCollapsed(false), // đóng sidebar trên mobile
-          }))}
-        />
-      </Sider>
-
-      {/* Right Layout */}
-      <Layout className="right-layout">
-        <div className="header">
-          {/* Hàng 1 */}
-          <div className="top-row">
-            <Button
-              className="menu-btn"
-              icon={<MenuOutlined />}
-              onClick={() => setCollapsed(!collapsed)}
-            />
-            <div className="page-active">
-              {menuItems.find((item) => item.key === location.pathname)?.label}
+              <div className="page-active">
+                {menuItems.find((item) => item.key === location.pathname)?.label}
+              </div>
+              <div className="header-right">
+                <div className="search-box desktop-only">
+                  <button type="button" className="search-btn">
+                    <img src="/icons/search.svg" alt="Search" />
+                  </button>
+                  <input type="text" placeholder="Search for something" />
+                </div>
+                <div className="setting-header desktop-only">
+                  <img src="/icons/setting-header.svg" alt="icon-setting" />
+                </div>
+                <div className="notification-header desktop-only">
+                  <img src="/icons/notification-header.svg" alt="icon-notification" />
+                </div>
+                <img className="avatar" src="/images/avatar.png" alt="avatar" />
+              </div>
             </div>
-            <div className="header-right">
-              <div className="search-box desktop-only">
+
+            {/* Hàng 2 (chỉ mobile) */}
+            <div className="bottom-row mobile-only">
+              <div className="search-box">
                 <button type="button" className="search-btn">
                   <img src="/icons/search.svg" alt="Search" />
                 </button>
                 <input type="text" placeholder="Search for something" />
               </div>
-              <div className="setting-header desktop-only">
-                <img src="/icons/setting-header.svg" alt="icon-setting" />
-              </div>
-              <div className="notification-header desktop-only">
-                <img src="/icons/notification-header.svg" alt="icon-notification" />
-              </div>
-              <img className="avatar" src="/images/avatar.png" alt="avatar" />
             </div>
           </div>
 
-          {/* Hàng 2 (chỉ mobile) */}
-          <div className="bottom-row mobile-only">
-            <div className="search-box">
-              <button type="button" className="search-btn">
-                <img src="/icons/search.svg" alt="Search" />
-              </button>
-              <input type="text" placeholder="Search for something" />
-            </div>
-          </div>
-        </div>
-
-        <Content className="content">
-          <Outlet />
-        </Content>
+          <Content className="content">
+            <Outlet />
+          </Content>
+        </Layout>
       </Layout>
-    </Layout>
+    </div>
   );
 }
