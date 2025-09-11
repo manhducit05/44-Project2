@@ -8,3 +8,8 @@ body {
 code {
   font-family: 'Source Code Pro', monospace;
 }
+
+* {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}

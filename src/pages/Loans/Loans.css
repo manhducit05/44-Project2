@@ -1,0 +1,57 @@
+.loans-page {
+  padding: 20px;
+}
+
+.loan-stat {
+  border-radius: 12px;
+}
+
+.loan-stat-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.loan-stat-content img {
+  width: 40px;
+  height: 40px;
+}
+
+.loans-section {
+  margin-top: 24px;
+}
+
+.loan-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.loan-header,
+.loan-row,
+.loan-total {
+  display: grid;
+  grid-template-columns: 80px 140px 140px 120px 120px 160px 80px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.loan-header {
+  font-weight: 600;
+  background: #fafafa;
+}
+
+.loan-row:last-child {
+  border-bottom: none;
+}
+
+.loan-total {
+  font-weight: 600;
+  color: #d9534f;
+}
+
+.loan-total div:nth-child(2),
+.loan-total div:nth-child(3),
+.loan-total div:nth-child(6) {
+  color: #d9534f;
+}

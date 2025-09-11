@@ -116,22 +116,22 @@ const Home = () => {
                     <Col>
                       <div className="person">
                         <img src="/images/home/avatar1.svg" alt="user" />
-                        <div>Livia Bator</div>
-                        <div>CEO</div>
+                        <div className="name">Livia Bator</div>
+                        <div className="role">CEO</div>
                       </div>
                     </Col>
                     <Col>
                       <div className="person">
                         <img src="/images/home/avatar2.svg" alt="user" />
-                        <div>Randy Press</div>
-                        <div>Director</div>
+                        <div className="name">Randy Press</div>
+                        <div className="role">Director</div>
                       </div>
                     </Col>
                     <Col>
                       <div className="person">
                         <img src="/images/home/avatar3.svg" alt="user" />
-                        <div>Workman</div>
-                        <div>Designer</div>
+                        <div className="name">Workman</div>
+                        <div className="role">Designer</div>
                       </div>
                     </Col>
                   </Row>

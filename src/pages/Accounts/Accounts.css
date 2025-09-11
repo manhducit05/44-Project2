@@ -1,0 +1,98 @@
+.accounts-page {
+  padding: 20px;
+  background: #f9fbfd;
+  min-height: 100vh;
+}
+
+.summary-card {
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 20px;
+}
+
+.responsive-col {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.credit-card-wrapper {
+  border-radius: 16px;
+}
+
+.credit-card {
+  background: linear-gradient(135deg, #4c6fff, #3a47d5);
+  color: white;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: left;
+  position: relative;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.credit-card .balance {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.credit-card .holder,
+.credit-card .valid {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.credit-card .number {
+  margin-top: 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.credit-card .card-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  opacity: 0.7;
+}
+
+
+
+.invoice-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:20px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.invoice-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.invoice-name {
+  font-weight: 500;
+}
+
+.invoice-time {
+  font-size: 12px;
+  color: gray;
+}
+
+.invoice-amount {
+  font-weight: bold;
+}
+
+.card-icon {
+  width: 50px;
+  margin-right: 8px;
+}
+
+@media (max-width: 1439.98px) {}
+
+@media (max-width: 1043.98px) {}

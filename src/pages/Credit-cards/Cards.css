@@ -1,0 +1,103 @@
+.cards-page {
+  padding: 20px;
+}
+
+.credit-card {
+  color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  height: 180px;
+  position: relative;
+}
+
+.credit-card.blue {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.credit-card.purple {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.credit-card.gray {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.credit-card .balance {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.credit-card .holder {
+  margin-top: 10px;
+}
+
+.credit-card .valid {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.credit-card .number {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.credit-card .switch {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-size: 20px;
+}
+
+.card-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.card-info {
+  display: flex;
+  gap: 24px;
+}
+
+.card-info div {
+  font-size: 13px;
+}
+
+.legend {
+  margin-top: 12px;
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+}
+
+.setting-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-item img {
+  width: 32px;
+  height: 32px;
+}
+
+.setting-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.setting-desc {
+  font-size: 12px;
+  color: #888;
+}

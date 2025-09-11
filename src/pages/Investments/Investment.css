@@ -1,0 +1,94 @@
+.investment-page {
+  padding: 20px;
+}
+
+.stat-card {
+  border-radius: 12px;
+}
+
+.stat-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.chart-img {
+  width: 100%;
+  height: auto;
+}
+
+.investment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.investment-item:last-child {
+  border-bottom: none;
+}
+
+.investment-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.investment-info {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.investment-name {
+  font-weight: 500;
+}
+
+.investment-category {
+  font-size: 12px;
+  color: #888;
+}
+
+.investment-value {
+  text-align: right;
+}
+
+.investment-return {
+  font-size: 13px;
+}
+
+.investment-return.positive {
+  color: #28a745;
+}
+
+.investment-return.negative {
+  color: #dc3545;
+}
+
+.trending-stock {
+  display: flex;
+  flex-direction: column;
+}
+
+.trending-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 80px 60px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.trending-row:last-child {
+  border-bottom: none;
+}
+
+.trending-row .return.positive {
+  color: #28a745;
+}
+
+.trending-row .return.negative {
+  color: #dc3545;
+}
