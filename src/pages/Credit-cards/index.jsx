@@ -1,85 +1,82 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Typography, Button, Input, DatePicker } from "antd";
 import "./Cards.css";
+import BlueCard from "../../components/blue-card";
+import WhiteCard from "../../components/white-card";
+import LightBlueCard from "../../components/lightblue-card";
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 
 const cardList = [
-  { id: 1, bank: "DBL Bank", number: "**** **** 5600", name: "William", type: "Secondary", color: "#E5F0FF" },
-  { id: 2, bank: "BRC Bank", number: "**** **** 4300", name: "Michel", type: "Secondary", color: "#FFE6E6" },
-  { id: 3, bank: "ABM Bank", number: "**** **** 7560", name: "Edward", type: "Secondary", color: "#FFF9E6" },
+  { id: 1, icon: "/images/creditcard/icon-a.svg", bank: "DBL Bank", number: "**** **** 5600", name: "William", type: "Secondary", color: "#E5F0FF" },
+  { id: 2, icon: "/images/creditcard/icon-b.svg", bank: "BRC Bank", number: "**** **** 4300", name: "Michel", type: "Secondary", color: "#FFE6E6" },
+  { id: 3, icon: "/images/creditcard/icon-c.svg", bank: "ABM Bank", number: "**** **** 7560", name: "Edward", type: "Secondary", color: "#FFF9E6" },
 ];
 
 const settings = [
-  { id: 1, icon: "/images/icons/block.svg", title: "Block Card", desc: "Instantly block your card" },
-  { id: 2, icon: "/images/icons/pin.svg", title: "Change Pin Code", desc: "Choose another pin code" },
-  { id: 3, icon: "/images/icons/googlepay.svg", title: "Add to Google Pay", desc: "Withdraw without any card" },
-  { id: 4, icon: "/images/icons/applepay.svg", title: "Add to Apple Pay", desc: "Withdraw without any card" },
-  { id: 5, icon: "/images/icons/appstore.svg", title: "Add to App Store", desc: "Withdraw without any card" },
+  { id: 1, icon: "/images/creditcard/icon1.svg", title: "Block Card", desc: "Instantly block your card" },
+  { id: 2, icon: "/images/creditcard/icon2.svg", title: "Change Pin Code", desc: "Choose another pin code" },
+  { id: 3, icon: "/images/creditcard/icon3.svg", title: "Add to Google Pay", desc: "Withdraw without any card" },
+  { id: 4, icon: "/images/creditcard/icon4.svg", title: "Add to Apple Pay", desc: "Withdraw without any card" },
+  { id: 5, icon: "/images/creditcard/icon4.svg", title: "Add to App Store", desc: "Withdraw without any card" },
 ];
 
 const CreditCardsPage = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 744);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 744);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="cards-page">
       {/* My Cards */}
       <Title level={5}>My Cards</Title>
-      <Row gutter={16}>
-        <Col xs={24} lg={8}>
-          <Card className="credit-card blue">
-            <div className="balance">$5,756</div>
-            <div className="holder">Eddy Cusuma</div>
-            <div className="valid">12/22</div>
-            <div className="number">3778 **** **** 1234</div>
-            <div className="switch">○</div>
-          </Card>
-        </Col>
-        <Col xs={24} lg={8}>
-          <Card className="credit-card purple">
-            <div className="balance">$5,756</div>
-            <div className="holder">Eddy Cusuma</div>
-            <div className="valid">12/22</div>
-            <div className="number">3778 **** **** 1234</div>
-            <div className="switch">○</div>
-          </Card>
-        </Col>
-        <Col xs={24} lg={8}>
-          <Card className="credit-card gray">
-            <div className="balance">$5,756</div>
-            <div className="holder">Eddy Cusuma</div>
-            <div className="valid">12/22</div>
-            <div className="number">3778 **** **** 1234</div>
-            <div className="switch">○</div>
-          </Card>
-        </Col>
-      </Row>
+      {isMobile ? (
+        // Mobile: scroll ngang
+        <div className="cards-scroll">
+          <div className="cards-row">
+            <div className="scroll-card"><LightBlueCard /></div>
+            <div className="scroll-card"><BlueCard /></div>
+            <div className="scroll-card"><WhiteCard /></div>
+          </div>
+        </div>
+      ) : (
+        // Desktop: 3 cột chuẩn
+        <Row gutter={16}>
+          <Col span={8}><LightBlueCard /></Col>
+          <Col span={8}><BlueCard /></Col>
+          <Col span={8}><WhiteCard /></Col>
+        </Row>
+      )}
 
       {/* Stats + List */}
       <Row gutter={16} style={{ marginTop: 24 }}>
-        <Col xs={24} lg={10}>
-          <Card title="Card Expense Statistics">
-            <img src="/images/cards/pie.svg" alt="chart" style={{ width: "100%" }} />
-            <div className="legend">
-              <span style={{ color: "#FF4D4F" }}>● BRC Bank</span>
-              <span style={{ color: "#1890FF" }}>● DBL Bank</span>
-              <span style={{ color: "#52C41A" }}>● ABM Bank</span>
-              <span style={{ color: "#FAAD14" }}>● MCP Bank</span>
-            </div>
+        <Col xs={24} lg={8}>
+          <Card className="card-center" title="Card Expense Statistics">
+            <img src="/images/creditcard/chart1.svg" alt="chart" className="expense-chart" />
           </Card>
         </Col>
-        <Col xs={24} lg={14}>
-          <Card title="Card List">
+        <Col xs={24} lg={16}>
+          <div title="card-list">
+            <div className="card-list-tile title">Card List</div>
             {cardList.map((c) => (
-              <div className="card-list-item" key={c.id} style={{ background: c.color }}>
+              <div className="card-list-item" key={c.id}>
                 <div className="card-info">
-                  <div><b>Card Type</b><br />{c.type}</div>
-                  <div><b>Bank</b><br />{c.bank}</div>
-                  <div><b>Card Number</b><br />{c.number}</div>
-                  <div><b>Namaim Card</b><br />{c.name}</div>
+                  <img src={c.icon} alt="icon" />
+                  <div className="label"><b>Card Type</b><br /><div className="value">{c.type}</div></div>
+                  <div className="label"><b>Bank</b><br /><div className="value">{c.bank}</div></div>
+                  <div className="label hidden-mobile"><b>Card Number</b><br /><div className="value">{c.number}</div></div>
+                  <div className="label hidden-mobile"><b>Name on Card</b><br /><div className="value">{c.name}</div></div>
                 </div>
                 <Button type="link">View Details</Button>
               </div>
             ))}
-          </Card>
+          </div>
         </Col>
       </Row>
 
@@ -88,7 +85,7 @@ const CreditCardsPage = () => {
         <Col xs={24} lg={14}>
           <Card title="Add New Card">
             <p className="desc">
-              Credit Card generally means a plastic card issued by Scheduled Commercial Banks...
+              Credit Card generally means a plastic card issued by Scheduled Commercial Banks assigned to a Cardholder, with a credit limit, that can be used to purchase goods and services on credit or obtain cash advances.
             </p>
             <Row gutter={16}>
               <Col xs={24} md={12}>

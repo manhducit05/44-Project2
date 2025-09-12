@@ -1,6 +1,8 @@
 import React from "react";
 import "./Home.css";
 import { Col, Row } from 'antd';
+import BlueCard from "../../components/blue-card";
+import WhiteCard from "../../components/white-card";
 const Home = () => {
   return (
     <div className="home">
@@ -12,23 +14,11 @@ const Home = () => {
               <Row gutter={50} wrap={false}>
                 <Col>
                   <div className="title">My Cards</div>
-                  <div className="card blue-card">
-                    <p className="balance">Balance</p>
-                    <h2 className="money">$5,756</h2>
-                    <p className="holder">CARD HOLDER<br /><span className="name">Eddy Cusuma</span></p>
-                    <p className="valid">VALID THRU<br /><span className="ratio">12/22</span></p>
-                    <p className="number">3778 **** **** 1234</p>
-                  </div>
+                  <BlueCard />
                 </Col>
                 <Col>
                   <div className="title see-all">See All</div>
-                  <div className="card white-card">
-                    <p className="balance">Balance</p>
-                    <h2 className="money">$5,756</h2>
-                    <p className="holder">CARD HOLDER<br /><span className="name">Eddy Cusuma</span></p>
-                    <p className="valid">VALID THRU<br /><span className="ratio">12/22</span></p>
-                    <p className="number">3778 **** **** 1234</p>
-                  </div>
+                  <WhiteCard />
                 </Col>
               </Row>
             </div>
@@ -143,7 +133,7 @@ const Home = () => {
                     </Col>
                     <Col span={16}>
                       <div className="groupBtn">
-                        <input type="text" placeholder="Write Amount" value="525.50" />
+                        <input type="text" placeholder="Write Amount" onChange={(e) => { }} />
                         <div className="btn">
                           <img src="/images/home/planeiconbtn.svg" alt="icon-transfer" />
                           Send

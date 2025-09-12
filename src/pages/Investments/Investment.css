@@ -12,14 +12,27 @@
   gap: 12px;
 }
 
-.stat-icon {
-  width: 40px;
-  height: 40px;
-}
+
 
 .chart-img {
   width: 100%;
   height: auto;
+}
+
+.stat-card .stat-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.stat-card .stat-title {
+  color: rgba(113, 142, 191, 1);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.stat-card .stat-money {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .investment-item {
@@ -91,4 +104,27 @@
 
 .trending-row .return.negative {
   color: #dc3545;
+}
+
+@media(max-width:1439.98px) {
+  .stat-card .stat-icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 20%;
+  }
+
+  .stat-card .stat-title {
+    font-size: 12px;
+  }
+
+  .stat-card .stat-money {
+    font-size: 16px;
+  }
+}
+
+@media(max-width:1043.98px) {
+  .stat-card .stat-icon {
+    width: 45px;
+    height: 45px;
+  }
 }

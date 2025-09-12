@@ -1,0 +1,152 @@
+.card {
+  flex: 1;
+  border-radius: 20px;
+  padding: 20px;
+  min-height: 180px;
+  height: 235px;
+  width: 350px;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blur {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.flex-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infor-customer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .number {
+  margin-top: 20px;
+  /* font-size: 18px; */
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+}
+
+.blue-card {
+  background: linear-gradient(107.38deg, #4C49ED 2.61%, #0A06F4 101.2%);
+  color: #fff;
+}
+
+/* .chip-card {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+}
+
+.bank {
+  position: absolute;
+  right: 15px;
+  bottom: 35px; */
+/* } */
+
+.blue-card .balance,
+.blue-card .holder,
+.blue-card .valid {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Lato', sans-serif;
+
+}
+
+.card.blue-card .money {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+
+}
+
+.blue-card .holder .name,
+.blue-card .valid .ratio {
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+
+}
+
+.blue-card .number {
+  font-size: 22px;
+  color: #fff;
+}
+
+@media (max-width: 1439.98px) {
+
+
+  .card {
+    height: 170px;
+    width: 231px;
+    padding: 20px 5px;
+    gap: 5px;
+
+
+  }
+
+  .blur {
+    height: 55px;
+  }
+
+  .list-payment {
+    height: 170px;
+    width: 231px;
+    padding: 0;
+  }
+
+  .card .balance {
+    font-size: 11px;
+  }
+
+  .card .money {
+    font-size: 16px;
+  }
+
+  .card .holder,
+  .card .valid {
+    font-size: 10px;
+  }
+
+  .card .holder .name,
+  .card .valid .ratio {
+    font-size: 13px;
+  }
+
+  .card .number {
+    font-size: 15px;
+  }
+
+  .bank {
+    width: 27px;
+  }
+}
+
+@media (max-width: 1043.98px) {
+  .home .card {
+    width: 265px;
+    padding: 20px;
+  }
+
+  .mobile-center {
+    display: flex;
+    justify-content: center;
+  }
+
+}

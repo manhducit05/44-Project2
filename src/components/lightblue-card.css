@@ -1,0 +1,110 @@
+.card {
+  flex: 1;
+  border-radius: 20px;
+  padding: 20px;
+  min-height: 180px;
+  height: 235px;
+  width: 350px;
+  font-family: 'Lato', sans-serif;
+  position: relative;
+}
+
+.blur {
+  height: 70px;
+}
+
+.card .number {
+  margin-top: 20px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+}
+
+.light-blue-card {
+  background: linear-gradient(107.38deg, #2D60FF 2.61%, #539BFF 101.2%);
+  color: #fff;
+}
+
+
+
+.light-blue-card .balance,
+.light-blue-card .holder,
+.light-blue-card .valid {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Lato', sans-serif;
+
+}
+
+.card.light-blue-card .money {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+
+}
+
+.light-blue-card .holder .name,
+.light-blue-card .valid .ratio {
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+
+}
+
+.light-blue-card .number {
+  font-size: 22px;
+  color: #fff;
+}
+
+@media (max-width: 1439.98px) {
+
+
+  .card {
+    height: 170px;
+    width: 231px;
+  }
+
+  .blur {
+    height: 55px;
+  }
+
+  .list-payment {
+    height: 170px;
+    width: 231px;
+    padding: 0;
+  }
+
+  .card .balance {
+    font-size: 11px;
+  }
+
+  .card .money {
+    font-size: 16px;
+  }
+
+  .card .holder,
+  .card .valid {
+    font-size: 10px;
+  }
+
+  .card .holder .name,
+  .card .valid .ratio {
+    font-size: 13px;
+  }
+
+  .card .number {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1043.98px) {
+
+
+  .mobile-center {
+    display: flex;
+    justify-content: center;
+  }
+
+}

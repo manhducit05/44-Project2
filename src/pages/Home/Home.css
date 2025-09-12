@@ -10,83 +10,9 @@
   margin-bottom: 20px;
 }
 
-.home .card {
-  flex: 1;
-  border-radius: 20px;
-  padding: 20px;
-  min-height: 180px;
-  height: 235px;
-  width: 350px;
-}
 
-.home .card .number {
-  margin-top: 20px;
-  font-size: 18px;
-  letter-spacing: 2px;
-  font-weight: 600;
-}
 
-.home .blue-card {
-  background: linear-gradient(107.38deg, #4C49ED 2.61%, #0A06F4 101.2%);
-  color: #fff;
-}
 
-.home .blue-card .balance,
-.home .blue-card .holder,
-.home .blue-card .valid {
-  font-size: 12px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.home .card.blue-card .money {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.home .blue-card .holder .name,
-.home .blue-card .valid .ratio {
-  font-weight: 600;
-  font-size: 15px;
-  color: #fff;
-}
-
-.home .blue-card .number {
-  font-size: 22px;
-  color: #fff;
-}
-
-.home .white-card {
-  background: #f9fafb;
-  border: 1px solid #ddd;
-  color: #343C6A;
-}
-
-.home .white-card .balance,
-.home .white-card .holder,
-.home .white-card .valid {
-  font-size: 12px;
-  font-weight: 400;
-  color: rgba(113, 142, 191, 1);
-}
-
-.home .white-card .money {
-  font-size: 20px;
-  font-weight: 600;
-  color: #343C6A;
-}
-
-.home .white-card .holder .name,
-.home .white-card .valid .ratio {
-  font-weight: 600;
-  font-size: 15px;
-  color: #343C6A;
-}
-
-.home .white-card .number {
-  font-size: 22px;
-  color: #343C6A;
-}
 
 .home .right-side .recent,
 .home .right-side .expense {

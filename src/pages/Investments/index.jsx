@@ -52,8 +52,8 @@ const InvestmentPage = () => {
             <div className="stat-content">
               <img src="/images/investment/moneyicon.svg" alt="stat" className="stat-icon" />
               <div>
-                <Text>Total Invested Amount</Text>
-                <Title level={4}>$150,000</Title>
+                <div className="stat-title">Total Invested Amount</div>
+                <div className="stat-money">$150,000</div>
               </div>
             </div>
           </Card>
@@ -63,8 +63,8 @@ const InvestmentPage = () => {
             <div className="stat-content">
               <img src="/images/investment/percenticon.svg" alt="stat" className="stat-icon" />
               <div>
-                <Text>Number of Investments</Text>
-                <Title level={4}>1,250</Title>
+                <div className="stat-title">Number of Investments</div>
+                <div className="stat-money">1,250</div>
               </div>
             </div>
           </Card>
@@ -74,8 +74,8 @@ const InvestmentPage = () => {
             <div className="stat-content">
               <img src="/images/investment/transfericon.svg" alt="stat" className="stat-icon" />
               <div>
-                <Text>Rate of Return</Text>
-                <Title level={4}>+5.80%</Title>
+                <div className="stat-title">Rate of Return</div>
+                <div className="stat-money">+5.8%</div>
               </div>
             </div>
           </Card>

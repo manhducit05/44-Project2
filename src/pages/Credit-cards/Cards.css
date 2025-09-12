@@ -1,5 +1,13 @@
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #343C6A;
+  margin-bottom: 20px;
+  /* $text-dark */
+}
+
 .cards-page {
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .credit-card {
@@ -57,6 +65,8 @@
   padding: 14px;
   border-radius: 12px;
   margin-bottom: 12px;
+  background-color: #fff;
+
 }
 
 .card-info {
@@ -101,3 +111,108 @@
   font-size: 12px;
   color: #888;
 }
+
+/*  */
+.expense-chart {
+  width: 350px;
+}
+
+.card-info img {
+  width: 60px;
+}
+
+.card-info .label {
+  font-size: 16px;
+}
+
+.card-info .value {
+  color: rgba(113, 142, 191, 1);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.ant-card {
+  overflow: hidden;
+}
+
+.ant-row {
+  align-items: stretch;
+}
+
+.ant-card {
+  height: 100%;
+}
+
+
+
+
+@media(max-width:1439.98px) {
+  .expense-chart {
+    width: 261px;
+  }
+
+  .card-info img {
+    width: 45px;
+  }
+
+  .card-info .label {
+    font-size: 12px;
+  }
+
+  .card-info .value {
+    font-size: 12px;
+  }
+
+}
+
+@media(max-width:1023.98px) {
+
+
+
+  .card-info .label {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
+
+
+
+}
+
+@media (max-width: 744px) {
+  .cards-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 12px;
+    /* tạo khoảng cách trái/phải */
+  }
+
+  .cards-row {
+    display: flex !important;
+    gap: 16px;
+    /* khoảng cách giữa các thẻ */
+  }
+
+  .cards-row>.ant-col {
+    flex: 0 0 auto !important;
+    /* không co lại */
+    width: auto !important;
+    /* bỏ ép grid */
+    min-width: 280px;
+    /* mỗi card có chiều rộng riêng */
+  }
+}
+
+@media(max-width:500px) {
+  .card-list-item {
+    justify-content: start;
+    gap: 5px;
+    padding: 5px;
+
+  }
+}
+
+@media(min-width:1043.98px) {}

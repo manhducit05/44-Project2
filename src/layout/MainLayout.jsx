@@ -113,7 +113,7 @@ export default function MainLayout() {
                   <button type="button" className="search-btn">
                     <img src="/icons/search.svg" alt="Search" />
                   </button>
-                  <input type="text" placeholder="Search for something" />
+                  <input type="text" placeholder="Search for something" onChange={(e) => { }} />
                 </div>
                 <div className="setting-header desktop-only">
                   <img src="/icons/setting-header.svg" alt="icon-setting" />
@@ -131,7 +131,7 @@ export default function MainLayout() {
                 <button type="button" className="search-btn">
                   <img src="/icons/search.svg" alt="Search" />
                 </button>
-                <input type="text" placeholder="Search for something" />
+                <input type="text" placeholder="Search for something" onChange={(e) => { }} />
               </div>
             </div>
           </div>
