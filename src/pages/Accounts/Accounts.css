@@ -59,13 +59,20 @@
   opacity: 0.7;
 }
 
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #343C6A;
+  margin-bottom: 20px;
+  /* $text-dark */
+}
 
 
 .invoice-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap:20px;
+  gap: 20px;
   padding: 9px 0;
   border-bottom: 1px solid #f0f0f0;
 }

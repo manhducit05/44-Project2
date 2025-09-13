@@ -1,69 +1,91 @@
 import React from "react";
-import { Row, Col, Card, Typography, Button } from "antd";
+import { Row, Col, Card, Button, Table, Typography } from "antd";
+import { useEffect, useState } from 'react'
 import "./Loans.css";
 
 const { Title, Text } = Typography;
-
-const loans = [
+const loanStats = [
   {
-    id: 1,
-    money: "$100,000",
+    icon: "/images/loans/icon1.svg",
+    label: "Personal Loans",
+    value: "$50,000",
+  },
+  {
+    icon: "/images/loans/icon2.svg",
+    label: "Corporate Loans",
+    value: "$100,000",
+  },
+  {
+    icon: "/images/loans/icon3.svg",
+    label: "Business Loans",
+    value: "$500,000",
+  },
+  {
+    icon: "/images/loans/icon4.svg",
+    label: "Custom Loans",
+    value: "Choose Money",
+  },
+];
+const loanData = [
+  {
+    key: 1,
+    loan: "$100,000",
     left: "$40,500",
     duration: "8 Months",
     rate: "12%",
-    installment: "$2,900 / month",
+    installment: "$2,000 / month",
   },
   {
-    id: 2,
-    money: "$500,000",
+    key: 2,
+    loan: "$500,000",
     left: "$250,000",
     duration: "36 Months",
     rate: "10%",
     installment: "$8,000 / month",
   },
   {
-    id: 3,
-    money: "$900,000",
+    key: 3,
+    loan: "$900,000",
     left: "$40,500",
     duration: "12 Months",
     rate: "12%",
     installment: "$5,000 / month",
   },
   {
-    id: 4,
-    money: "$40,000",
+    key: 4,
+    loan: "$50,000",
     left: "$40,500",
     duration: "25 Months",
-    rate: "15%",
-    installment: "$1,200 / month",
+    rate: "5%",
+    installment: "$2,000 / month",
   },
   {
-    id: 5,
-    money: "$350,000",
+    key: 5,
+    loan: "$50,000",
     left: "$40,500",
     duration: "5 Months",
-    rate: "18%",
+    rate: "16%",
     installment: "$10,000 / month",
   },
   {
-    id: 6,
-    money: "$80,000",
+    key: 6,
+    loan: "$80,000",
     left: "$25,500",
     duration: "14 Months",
     rate: "8%",
-    installment: "$2,900 / month",
+    installment: "$2,000 / month",
   },
   {
-    id: 7,
-    money: "$12,000",
+    key: 7,
+    loan: "$12,000",
     left: "$5,500",
     duration: "9 Months",
     rate: "13%",
     installment: "$500 / month",
   },
   {
-    id: 8,
-    money: "$120,000",
+    key: 8,
+    loan: "$160,000",
     left: "$100,800",
     duration: "3 Months",
     rate: "12%",
@@ -71,99 +93,86 @@ const loans = [
   },
 ];
 
+const fullColumns = [
+  { title: "SL No", dataIndex: "key", key: "key", render: (t) => `0${t}.` },
+  { title: "Loan Money", dataIndex: "loan", key: "loan" },
+  { title: "Left to repay", dataIndex: "left", key: "left" },
+  { title: "Duration", dataIndex: "duration", key: "duration" },
+  { title: "Interest rate", dataIndex: "rate", key: "rate" },
+  { title: "Installment", dataIndex: "installment", key: "installment" },
+  { title: "Repay", key: "action", render: () => <Button type="default" shape="round">Repay</Button> },
+];
+
+const mobileColumns = [
+  { title: "Loan Money", dataIndex: "loan", key: "loan" },
+  { title: "Left to repay", dataIndex: "left", key: "left" },
+  { title: "Repay", key: "action", render: () => <Button type="default" shape="round">Repay</Button> },
+];
+
 const LoansPage = () => {
+  const [isSmall, setIsSmall] = useState(window.innerWidth < 1024);
+
+  useEffect(() => {
+    const handleResize = () => setIsSmall(window.innerWidth < 1024);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className="loans-page">
       {/* Top Stats */}
       <Row gutter={16}>
-        <Col xs={24} lg={6}>
-          <Card className="loan-stat">
-            <div className="loan-stat-content">
-              <img src="/images/icons/personal.svg" alt="icon" />
-              <div>
-                <Text>Personal Loans</Text>
-                <Title level={4}>$50,000</Title>
+        {loanStats.map((stat, index) => (
+          <Col key={index} xs={24} lg={6}>
+            <Card className="loan-stat">
+              <div className="loan-stat-content">
+                <img src={stat.icon} alt="icon" />
+                <div>
+                  <div className="label">{stat.label}</div>
+                  <div className="value">{stat.value}</div>
+                </div>
               </div>
-            </div>
-          </Card>
-        </Col>
-        <Col xs={24} lg={6}>
-          <Card className="loan-stat">
-            <div className="loan-stat-content">
-              <img src="/images/icons/corporate.svg" alt="icon" />
-              <div>
-                <Text>Corporate Loans</Text>
-                <Title level={4}>$100,000</Title>
-              </div>
-            </div>
-          </Card>
-        </Col>
-        <Col xs={24} lg={6}>
-          <Card className="loan-stat">
-            <div className="loan-stat-content">
-              <img src="/images/icons/business.svg" alt="icon" />
-              <div>
-                <Text>Business Loans</Text>
-                <Title level={4}>$500,000</Title>
-              </div>
-            </div>
-          </Card>
-        </Col>
-        <Col xs={24} lg={6}>
-          <Card className="loan-stat">
-            <div className="loan-stat-content">
-              <img src="/images/icons/custom.svg" alt="icon" />
-              <div>
-                <Text>Custom Loans</Text>
-                <Title level={4}>Choose Money</Title>
-              </div>
-            </div>
-          </Card>
-        </Col>
+            </Card>
+          </Col>
+        ))}
       </Row>
 
       {/* Loans Table */}
       <div className="loans-section">
         <Title level={5}>Active Loans Overview</Title>
-        <Card>
-          <div className="loan-table">
-            <div className="loan-header">
-              <div>Sl. No</div>
-              <div>Loan Money</div>
-              <div>Left to repay</div>
-              <div>Duration</div>
-              <div>Interest rate</div>
-              <div>Installment</div>
-              <div>Repay</div>
-            </div>
-
-            {loans.map((loan, index) => (
-              <div className="loan-row" key={loan.id}>
-                <div>{String(index + 1).padStart(2, "0")}.</div>
-                <div>{loan.money}</div>
-                <div>{loan.left}</div>
-                <div>{loan.duration}</div>
-                <div>{loan.rate}</div>
-                <div>{loan.installment}</div>
-                <div>
-                  <Button type="primary" size="small" shape="round">
-                    Repay
-                  </Button>
-                </div>
-              </div>
-            ))}
-
-            <div className="loan-total">
-              <div>Total</div>
-              <div>$125,000</div>
-              <div>$750,000</div>
-              <div></div>
-              <div></div>
-              <div>$50,000 / month</div>
-              <div></div>
-            </div>
-          </div>
-        </Card>
+        <Table
+          columns={isSmall ? mobileColumns : fullColumns}
+          dataSource={loanData}
+          pagination={false}
+          summary={() => (
+            <Table.Summary.Row>
+              {isSmall ? (
+                <>
+                  <Table.Summary.Cell index={0}><b>Total</b></Table.Summary.Cell>
+                  <Table.Summary.Cell index={1}>
+                    $750,000
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={2} />
+                </>
+              ) : (
+                <>
+                  <Table.Summary.Cell index={0}><b>Total</b></Table.Summary.Cell>
+                  <Table.Summary.Cell index={1}>
+                    $125,0000
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={2}>
+                    $750,000
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={3} />
+                  <Table.Summary.Cell index={4} />
+                  <Table.Summary.Cell index={5}>
+                    $50,000 / month
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={6} />
+                </>
+              )}
+            </Table.Summary.Row>
+          )}
+        />
       </div>
     </div>
   );

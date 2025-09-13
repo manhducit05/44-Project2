@@ -1,8 +1,7 @@
 import React from "react";
 import { Row, Col, Card, Statistic, Table, Button } from "antd";
 import "./Accounts.css";
-import { CreditCardOutlined } from "@ant-design/icons";
-
+import LightBlueCard from "../../components/lightblue-card";
 const AccountsPage = () => {
   // dữ liệu Last Transaction
   const transactions = [
@@ -154,20 +153,9 @@ const AccountsPage = () => {
             />
           </Card>
         </Col>
-        <Col xs={24} lg={10} className="responsive-col">
-          <Card
-            title="My Card"
-            extra={<Button type="link">See All</Button>}
-            className="credit-card-wrapper"
-          >
-            <div className="credit-card">
-              <div className="balance">$5,756</div>
-              <div className="holder">CARD HOLDER: Eddy Cusuma</div>
-              <div className="valid">VALID THRU: 12/22</div>
-              <div className="number">3778 **** **** 1234</div>
-              <CreditCardOutlined className="card-icon" />
-            </div>
-          </Card>
+        <Col xs={24} lg={10}>
+          <div className="title">My card</div>
+          <LightBlueCard />
         </Col>
       </Row>
 

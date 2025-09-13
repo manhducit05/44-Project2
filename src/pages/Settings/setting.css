@@ -1,0 +1,68 @@
+.settings-page .change-avtar-button {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.settings-page .ant-upload {
+  position: relative;
+}
+
+.settings-page .change-avtar-button {
+  position: absolute;
+  left: 75px;
+  top: 75px;
+}
+
+.settings-page img {
+  position: absolute;
+  left: 0;
+
+}
+
+.ant-form {
+  position: relative;
+}
+
+.save-button {
+  color: #fff;
+  background-color: rgba(24, 20, 243, 1);
+  padding: 20px 60px;
+  border-radius: 10px;
+  position: absolute;
+  right: 20px;
+}
+
+.ant-switch-checked {
+  background-color: #16DBCC !important;
+}
+
+.settings-page .ant-form-item-label>label {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.settings-page .ant-switch {
+  transform: scale(1.2);
+  /* phóng to 20% */
+  margin-right: 12px;
+  /* cách chữ ra xa hơn */
+}
+
+/* Tăng khoảng cách giữa các dòng notification */
+.settings-page .notification-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  /* cách dòng rộng hơn */
+  font-size: 15px;
+  /* chữ to hơn 1 chút */
+}
+
+@media(max-width:1439.98px) {
+  .settings-page .ant-form-item-label>label {
+    font-size: 13px;
+  }
+}
+
+@media(max-width:1023.98px) {}

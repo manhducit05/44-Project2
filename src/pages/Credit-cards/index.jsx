@@ -35,7 +35,7 @@ const CreditCardsPage = () => {
   return (
     <div className="cards-page">
       {/* My Cards */}
-      <Title level={5}>My Cards</Title>
+      <div className="title">My Cards</div>
       {isMobile ? (
         // Mobile: scroll ngang
         <div className="cards-scroll">

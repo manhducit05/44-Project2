@@ -1,43 +1,60 @@
 import React from "react";
-import { Row, Col, Card, Typography, Button } from "antd";
+import { Row, Col, Card, Button } from "antd";
 import "./Services.css";
 
-const { Title, Text } = Typography;
+
+const serviceStats = [
+  {
+    icon: "/images/services/icon-a.svg",
+    label: "Life Insurance",
+    sub: "Unlimited protection",
+  },
+  {
+    icon: "/images/services/icon-b.svg",
+    label: "Shopping",
+    sub: "Buy. Think. Grow.",
+  },
+  {
+    icon: "/images/services/icon-c.svg",
+    label: "Safety",
+    sub: "We are your allies",
+  },
+];
 
 const services = [
   {
     id: 1,
-    icon: "/images/icons/business-loan.svg",
+    icon: "/images/services/icon1.svg",
     title: "Business loans",
     desc: "It is a long established",
   },
   {
     id: 2,
-    icon: "/images/icons/checking.svg",
+    icon: "/images/services/icon2.svg",
     title: "Checking accounts",
     desc: "It is a long established",
   },
   {
     id: 3,
-    icon: "/images/icons/savings.svg",
+    icon: "/images/services/icon3.svg",
     title: "Savings accounts",
     desc: "It is a long established",
   },
   {
     id: 4,
-    icon: "/images/icons/debit.svg",
+    icon: "/images/services/icon4.svg",
     title: "Debit and credit cards",
     desc: "It is a long established",
   },
   {
     id: 5,
-    icon: "/images/icons/insurance.svg",
+    icon: "/images/services/icon5.svg",
     title: "Life Insurance",
     desc: "It is a long established",
   },
   {
     id: 6,
-    icon: "/images/icons/business-loan.svg",
+    icon: "/images/services/icon6.svg",
     title: "Business loans",
     desc: "It is a long established",
   },
@@ -48,58 +65,47 @@ const ServicesPage = () => {
     <div className="services-page">
       {/* Top Stats */}
       <Row gutter={16}>
-        <Col xs={24} lg={8}>
-          <Card className="service-stat">
-            <div className="service-stat-content">
-              <img src="/images/icons/insurance.svg" alt="icon" />
-              <div>
-                <Text>Life Insurance</Text>
-                <div className="service-sub">Unlimited protection</div>
+        {serviceStats.map((service, index) => (
+          <Col key={index} xs={24} lg={8}>
+            <Card className="service-stat">
+              <div className="service-stat-content">
+                <img src={service.icon} alt="icon" />
+                <div>
+                  <div className="service-title">{service.label}</div>
+                  <div className="service-sub">{service.sub}</div>
+                </div>
               </div>
-            </div>
-          </Card>
-        </Col>
-        <Col xs={24} lg={8}>
-          <Card className="service-stat">
-            <div className="service-stat-content">
-              <img src="/images/icons/shopping.svg" alt="icon" />
-              <div>
-                <Text>Shopping</Text>
-                <div className="service-sub">Buy. Think. Grow.</div>
-              </div>
-            </div>
-          </Card>
-        </Col>
-        <Col xs={24} lg={8}>
-          <Card className="service-stat">
-            <div className="service-stat-content">
-              <img src="/images/icons/safety.svg" alt="icon" />
-              <div>
-                <Text>Safety</Text>
-                <div className="service-sub">We are your allies</div>
-              </div>
-            </div>
-          </Card>
-        </Col>
+            </Card>
+          </Col>
+        ))}
       </Row>
 
       {/* Services List */}
       <div className="services-section">
-        <Title level={5}>Bank Services List</Title>
+        <div className="title">Bank Services List</div>
         <Card>
           {services.map((item) => (
             <div className="service-item" key={item.id}>
               <div className="service-left">
                 <img src={item.icon} alt="icon" />
                 <div className="service-info">
-                  <div className="service-title">{item.title}</div>
-                  <div className="service-desc">{item.desc}</div>
+                  <div className="item-title">{item.title}</div>
+                  <div className="item-desc">{item.desc}</div>
                 </div>
               </div>
               <div className="service-cols">
-                <div>Lorem Ipsum<br />Many publishing</div>
-                <div>Lorem Ipsum<br />Many publishing</div>
-                <div>Lorem Ipsum<br />Many publishing</div>
+                <div className="item-data">
+                  <div className="item-title">Lorem Ipsum</div>
+                  <div className="item-desc">Many publishing</div>
+                </div>
+                <div className="item-data">
+                  <div className="item-title">Lorem Ipsum</div>
+                  <div className="item-desc">Many publishing</div>
+                </div>
+                <div className="item-data">
+                  <div className="item-title">Lorem Ipsum</div>
+                  <div className="item-desc">Many publishing</div>
+                </div>
               </div>
               <Button type="default" shape="round">
                 View Details

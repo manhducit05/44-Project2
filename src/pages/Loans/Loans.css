@@ -12,10 +12,6 @@
   gap: 12px;
 }
 
-.loan-stat-content img {
-  width: 40px;
-  height: 40px;
-}
 
 .loans-section {
   margin-top: 24px;
@@ -54,4 +50,66 @@
 .loan-total div:nth-child(3),
 .loan-total div:nth-child(6) {
   color: #d9534f;
+}
+
+
+.loan-stat-content img {
+  width: 70px;
+}
+
+.loan-stat-content .label {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(113, 142, 191, 1);
+}
+
+.loan-stat-content .value {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(35, 35, 35, 1);
+}
+
+.ant-table-content {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.ant-table-summary .ant-table-cell {
+  font-size: 16px !important;
+  color: rgba(254, 92, 115, 1);
+
+}
+
+.ant-table th {
+  color: rgba(113, 142, 191, 1) !important;
+  background: none !important;
+  font-weight: 500 !important;
+}
+
+@media(max-width: 1439.98px) {
+  .loan-stat-content img {
+    width: 45px;
+  }
+
+  .loan-stat-content .label {
+    font-size: 11px;
+  }
+
+  .loan-stat-content .value {
+    font-size: 16px;
+  }
+
+  .ant-table-content {
+    font-size: 12px;
+  }
+
+  .ant-table-summary .ant-table-cell {
+    font-size: 12px !important;
+  }
+}
+
+@media(max-width: 1023.98px) {
+  .loan-stat-content .label {
+    font-size: 12px;
+  }
 }
