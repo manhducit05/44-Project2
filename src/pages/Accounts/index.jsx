@@ -1,7 +1,8 @@
 import React from "react";
-import { Row, Col, Card, Statistic, Table, Button } from "antd";
+import { Row, Col, Card, Table } from "antd";
 import "./Accounts.css";
 import LightBlueCard from "../../components/lightblue-card";
+
 const AccountsPage = () => {
   // dữ liệu Last Transaction
   const transactions = [
@@ -17,7 +18,6 @@ const AccountsPage = () => {
     {
       key: "2",
       img: "icon-setting.svg",
-
       name: "Mobile Service",
       type: "Service",
       card: "1234 ****",
@@ -35,27 +35,19 @@ const AccountsPage = () => {
     },
   ];
 
-  const columns = [
+  const columnsTransactions = [
     {
       title: "Images",
       dataIndex: "img",
+      className: "col-img",
+      render: (src) => (
+        <img src={"/images/accounts/" + src} alt="card" />
+      ),
     },
-    {
-      title: "Name",
-      dataIndex: "name",
-    },
-    {
-      title: "Type",
-      dataIndex: "type",
-    },
-    {
-      title: "Card",
-      dataIndex: "card",
-    },
-    {
-      title: "Status",
-      dataIndex: "status",
-    },
+    { title: "Name", className: "col-name", dataIndex: "name", },
+    { title: "Type", className: "col-type hide-mobile", dataIndex: "type" },
+    { title: "Card", className: "col-card hide-mobile", dataIndex: "card" },
+    { title: "Status", className: "col-status hide-mobile", dataIndex: "status" },
     {
       title: "Amount",
       dataIndex: "amount",
@@ -75,112 +67,95 @@ const AccountsPage = () => {
     { id: 4, img: "card-setting-4.svg", name: "William", time: "10 days ago", amount: 90 },
   ];
 
+  const columnsInvoices = [
+    {
+      title: "Icon",
+      dataIndex: "img",
+      className:"invoice-icon",
+      render: (src) => (
+        <img src={"/images/accounts/" + src} alt="invoice-icon" />
+      ),
+    },
+    {
+      title: "Info",
+      render: (_, record) => (
+        <div>
+          <div className="invoice-name">{record.name}</div>
+          <div className="invoice-time">{record.time}</div>
+        </div>
+      ),
+    },
+    {
+      title: "Amount",
+      className:"invoice-amount",
+
+      dataIndex: "amount",
+      render: (val) => <div className="invoice-amount">${val}</div>,
+    },
+  ];
+
   return (
     <div className="accounts-page">
       {/* Summary Cards */}
-      <Row gutter={16}>
-        <Col xs={24} md={12} lg={6}>
-          <Card className="summary-card">
-            <Statistic
-              title="My Balance"
-              value={12750}
-              prefix={
-                <img
-                  className="card-icon"
-                  src="/images/accounts/icon1.svg"
-                  alt="income"
-                />
-              }
-            />
-          </Card>
-        </Col>
-        <Col xs={24} md={12} lg={6}>
-          <Card className="summary-card">
-            <Statistic
-              title="Income"
-              value={5600}
-              prefix={
-                <img
-                  className="card-icon"
-                  src="/images/accounts/icon-income.svg"
-                  alt="income"
-                />
-              }
-            />
-          </Card>
-        </Col>
-        <Col xs={24} md={12} lg={6}>
-          <Card className="summary-card">
-            <Statistic
-              title="Expense"
-              value={3460}
-              prefix={
-                <img
-                  className="card-icon"
-                  src="/images/accounts/icon-expense.svg"
-                  alt="income"
-                />
-              }
-            />
-          </Card>
-        </Col>
-        <Col xs={24} md={12} lg={6}>
-          <Card className="summary-card">
-            <Statistic title="Total Saving" value={7920}
-              prefix={
-                <img
-                  className="card-icon"
-                  src="/images/accounts/icon-saving.svg"
-                  alt="income"
-                />
-              }
-            />
-          </Card>
-        </Col>
+      <Row gutter={16} align="stretch">
+        {[
+          { title: "My Balance", value: 12750, icon: "icon-balance.svg" },
+          { title: "Income", value: 5600, icon: "icon-income.svg" },
+          { title: "Expense", value: 3460, icon: "icon-expense.svg" },
+          { title: "Total Saving", value: 7920, icon: "icon-saving.svg" },
+        ].map((item) => (
+          <Col xs={12} lg={6} key={item.title} style={{ display: "flex" }} >
+            <Card className="summary-card" style={{ flex: 1 }}>
+              <div className="summary-content">
+                <img src={`/images/accounts/` + item.icon} alt="stat" className="summary-icon" />
+                <div className="summary-info">
+                  <div className="summary-title">{item.title}</div>
+                  <div className="summary-money">${item.value}</div>
+                </div>
+              </div>
+            </Card>
+          </Col>
+        ))}
       </Row>
 
       {/* Transaction + Card */}
       <Row gutter={16} style={{ marginTop: 20 }}>
-        <Col xs={24} lg={14} className="responsive-col">
-          <Card title="Last Transaction">
-            <Table
-              columns={columns}
-              dataSource={transactions}
-              pagination={false}
-              rowKey="key"
-              showHeader={false}   // 👈 ẩn phần thead
-
-            />
-          </Card>
+        <Col xs={24} lg={16}>
+          <div className="title">Last Transaction</div>
+          <Table
+            columns={columnsTransactions}
+            dataSource={transactions}
+            pagination={false}
+            rowKey="key"
+            showHeader={false}
+            className="transaction-table"
+          />
         </Col>
-        <Col xs={24} lg={10}>
+        <Col xs={24} lg={8}>
           <div className="title">My card</div>
-          <LightBlueCard />
+          <div className="center">
+            <LightBlueCard />
+          </div>
         </Col>
       </Row>
 
       {/* Chart + Invoices */}
       <Row gutter={16} style={{ marginTop: 20 }}>
-        <Col xs={24} lg={14} className="responsive-col">
-          <Card title="Debit & Credit Overview">
-            <img src="/images/accounts/chart1.svg" alt="chart" />
-          </Card>
+        <Col xs={24} lg={17}>
+          <div className="title">Debit & Credit Overview</div>
+          <div className="mobile-center">
+            <img src="/images/accounts/chart1.svg" alt="chart" className="invoice-chart" />
+          </div>
         </Col>
-        <Col xs={24} lg={10} className="responsive-col">
-          <Card title="Invoices Sent">
-            {invoices.map((item) => (
-              <div className="invoice-item" key={item.id}>
-                <div className="invoice-icon">
-                  <img src={'/images/accounts/' + item.img} alt="invoice-icon" />
-                </div>
-                <div className="invoice-info">
-                  <div className="invoice-name">{item.name}</div>
-                  <div className="invoice-time">{item.time}</div>
-                </div>
-                <div className="invoice-amount">${item.amount}</div>
-              </div>
-            ))}
-          </Card>
+        <Col xs={24} lg={7}>
+          <div className="title">Invoices Sent</div>
+          <Table
+            columns={columnsInvoices}
+            dataSource={invoices}
+            pagination={false}
+            rowKey="id"
+            showHeader={false}
+          />
         </Col>
       </Row>
     </div>

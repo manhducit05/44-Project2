@@ -85,13 +85,13 @@ const InvestmentPage = () => {
       {/* Charts */}
       <Row gutter={16} style={{ marginTop: 20 }}>
         <Col xs={24} lg={12}>
-          <Title level={5}>Yearly Total Investment</Title>
+          <div className="title">Yearly Total Investment</div>
           <Card>
             <img src="/images/investment/chart1.svg" alt="chart" className="chart-img" />
           </Card>
         </Col>
         <Col xs={24} lg={12}>
-          <Title level={5}>Monthly Revenue</Title>
+          <div className="title">Monthly Revenue</div>
           <Card>
             <img src="/images/investment/chart2.svg" alt="chart" className="chart-img" />
           </Card>
@@ -101,7 +101,7 @@ const InvestmentPage = () => {
       {/* Investment & Trending */}
       <Row gutter={16} style={{ marginTop: 20 }}>
         <Col xs={24} lg={12}>
-          <Title level={5}>My Investment</Title>
+          <div className="title">My Investment</div>
           <Card>
             {investments.map((item) => (
               <div className="investment-item" key={item.id}>
@@ -122,7 +122,7 @@ const InvestmentPage = () => {
         </Col>
 
         <Col xs={24} lg={12}>
-          <Title level={5}>Trending Stock</Title>
+          <div className="title">Trending Stoc</div>
           <Card>
             <div className="trending-stock">
               {trending.map((item, index) => (

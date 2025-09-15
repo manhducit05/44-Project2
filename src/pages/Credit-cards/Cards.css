@@ -1,13 +1,10 @@
 .title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   color: #343C6A;
   margin-bottom: 20px;
   /* $text-dark */
-}
-
-.cards-page {
-  /* padding: 20px; */
+  margin-top: 15px;
 }
 
 .credit-card {
@@ -143,8 +140,19 @@
   height: 100%;
 }
 
+/*  */
+.setting-item img {
+  width: 60px;
+  height: 60px;
+}
 
+.setting-title {
+  font-size: 16px;
+}
 
+.setting-desc {
+  font-size: 15px;
+}
 
 @media(max-width:1439.98px) {
   .expense-chart {
@@ -163,6 +171,22 @@
     font-size: 12px;
   }
 
+  .title {
+    font-size: 18px;
+  }
+
+  .setting-item img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .setting-title {
+    font-size: 12px;
+  }
+
+  .setting-desc {
+    font-size: 11px;
+  }
 }
 
 @media(max-width:1023.98px) {
@@ -178,8 +202,18 @@
     display: none;
   }
 
+  .title {
+    font-size: 16px;
+  }
 
 
+  .setting-title {
+    font-size: 14px;
+  }
+
+  .setting-desc {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 744px) {
@@ -203,6 +237,10 @@
     /* bỏ ép grid */
     min-width: 280px;
     /* mỗi card có chiều rộng riêng */
+  }
+
+  input {
+    margin: 10px 0;
   }
 }
 

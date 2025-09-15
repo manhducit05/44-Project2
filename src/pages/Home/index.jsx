@@ -1,26 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { Col, Row } from 'antd';
 import BlueCard from "../../components/blue-card";
 import WhiteCard from "../../components/white-card";
+
 const Home = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 615);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 615);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="home">
       {/* My Cards */}
       <div className="section-1">
         <Row justify="space-between" gutter={40}>
-          <Col xs={24} lg={16}>
+          <Col xs={24} lg={14}>
             <div className="dual-card mobile-center">
-              <Row gutter={50} wrap={false}>
-                <Col>
-                  <div className="title">My Cards</div>
-                  <BlueCard />
-                </Col>
-                <Col>
-                  <div className="title see-all">See All</div>
-                  <WhiteCard />
-                </Col>
-              </Row>
+              {isMobile ? (
+                <div className="cards-scroll">
+                  <div className="cards-row">
+                    <div className="scroll-card">
+                      <div className="title">My Cards</div>
+                      <BlueCard />
+                    </div>
+                    <div className="scroll-card">
+                      <div className="title see-all">See All</div>
+                      <WhiteCard chipSrc="/images/home/Chip_Card2.svg" />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                // 👉 Desktop
+                <Row gutter={50} wrap={false}>
+                  <Col>
+                    <div className="title">My Cards</div>
+                    <BlueCard />
+                  </Col>
+                  <Col>
+                    <div className="title see-all">See All</div>
+                    <WhiteCard chipSrc="/images/home/Chip_Card2.svg" />
+                  </Col>
+                </Row>
+              )}
             </div>
           </Col>
           <Col xs={24} lg={8}>
@@ -72,11 +98,7 @@ const Home = () => {
             </div>
           </Col>
         </Row>
-
-
-
       </div>
-
       <div className="section-2">
         <Row justify="space-between" gutter={40}>
           <Col xs={24} lg={16}>
@@ -133,7 +155,7 @@ const Home = () => {
                     </Col>
                     <Col span={16}>
                       <div className="groupBtn">
-                        <input type="text" placeholder="Write Amount" onChange={(e) => { }} />
+                        <input type="text" placeholder="525.50" onChange={(e) => { }} />
                         <div className="btn">
                           <img src="/images/home/planeiconbtn.svg" alt="icon-transfer" />
                           Send

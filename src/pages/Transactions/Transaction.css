@@ -1,5 +1,5 @@
 .title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   color: #343C6A;
   margin-bottom: 20px;
@@ -10,83 +10,6 @@
   margin-bottom: 20px;
 }
 
-.transaction .card {
-  flex: 1;
-  border-radius: 20px;
-  padding: 20px;
-  min-height: 180px;
-  height: 235px;
-  width: 350px;
-}
-
-.transaction .card .number {
-  margin-top: 20px;
-  font-size: 18px;
-  letter-spacing: 2px;
-  font-weight: 600;
-}
-
-.transaction .blue-card {
-  background: linear-gradient(107.38deg, #4C49ED 2.61%, #0A06F4 101.2%);
-  color: #fff;
-}
-
-.transaction .blue-card .balance,
-.transaction .blue-card .holder,
-.transaction .blue-card .valid {
-  font-size: 12px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.transaction .card.blue-card .money {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.transaction .blue-card .holder .name,
-.transaction .blue-card .valid .ratio {
-  font-weight: 600;
-  font-size: 15px;
-  color: #fff;
-}
-
-.transaction .blue-card .number {
-  font-size: 22px;
-  color: #fff;
-}
-
-.transaction .white-card {
-  background: #f9fafb;
-  border: 1px solid #ddd;
-  color: #343C6A;
-}
-
-.transaction .white-card .balance,
-.transaction .white-card .holder,
-.transaction .white-card .valid {
-  font-size: 12px;
-  font-weight: 400;
-  color: rgba(113, 142, 191, 1);
-}
-
-.transaction .white-card .money {
-  font-size: 20px;
-  font-weight: 600;
-  color: #343C6A;
-}
-
-.transaction .white-card .holder .name,
-.transaction .white-card .valid .ratio {
-  font-weight: 600;
-  font-size: 15px;
-  color: #343C6A;
-}
-
-.transaction .white-card .number {
-  font-size: 22px;
-  color: #343C6A;
-}
 
 /* section2 */
 .transactions-container {
@@ -173,39 +96,10 @@
 }
 
 @media (max-width: 1439.98px) {
-
-
-  .transaction .card {
-    height: 170px;
-    width: 231px;
-  }
-
   .transaction .list-payment {
     height: 170px;
     width: 231px;
     padding: 0;
-  }
-
-  .transaction .card .balance {
-    font-size: 11px;
-  }
-
-  .transaction .card .money {
-    font-size: 16px;
-  }
-
-  .transaction .card .holder,
-  .transaction .card .valid {
-    font-size: 10px;
-  }
-
-  .transaction .card .holder .name,
-  .transaction .card .valid .ratio {
-    font-size: 13px;
-  }
-
-  .transaction .card .number {
-    font-size: 15px;
   }
 
   .transaction .expense img {
@@ -213,7 +107,9 @@
     height: 170px;
   }
 
-
+  .title {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 1043.98px) {
@@ -226,4 +122,31 @@
     justify-content: center;
   }
 
+  .cards-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* tránh scroll dọc */
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  .cards-row {
+    display: flex;
+    flex-wrap: nowrap;
+    /* bắt buộc 1 hàng */
+    gap: 16px;
+  }
+
+  .scroll-card {
+    flex: 0 0 auto;
+    /* giữ nguyên width, không co lại */
+    width: 280px;
+    /* hoặc % tùy bạn */
+  }
+
+  .title {
+    font-size: 16px;
+  }
 }
+
+@media (max-width: 744px) {}

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Card, Typography, Button, Input, DatePicker } from "antd";
+import { Row, Col, Card, Button, Input, DatePicker } from "antd";
 import "./Cards.css";
 import BlueCard from "../../components/blue-card";
 import WhiteCard from "../../components/white-card";
 import LightBlueCard from "../../components/lightblue-card";
 
-const { Title } = Typography;
 
 const cardList = [
   { id: 1, icon: "/images/creditcard/icon-a.svg", bank: "DBL Bank", number: "**** **** 5600", name: "William", type: "Secondary", color: "#E5F0FF" },
@@ -42,7 +41,7 @@ const CreditCardsPage = () => {
           <div className="cards-row">
             <div className="scroll-card"><LightBlueCard /></div>
             <div className="scroll-card"><BlueCard /></div>
-            <div className="scroll-card"><WhiteCard /></div>
+            <div className="scroll-card"><WhiteCard chipSrc="/images/home/Chip_Card3.svg" /></div>
           </div>
         </div>
       ) : (
@@ -50,16 +49,17 @@ const CreditCardsPage = () => {
         <Row gutter={16}>
           <Col span={8}><LightBlueCard /></Col>
           <Col span={8}><BlueCard /></Col>
-          <Col span={8}><WhiteCard /></Col>
+          <Col span={8}><WhiteCard chipSrc="/images/home/Chip_Card3.svg" /></Col>
         </Row>
       )}
 
       {/* Stats + List */}
       <Row gutter={16} style={{ marginTop: 24 }}>
         <Col xs={24} lg={8}>
-          <Card className="card-center" title="Card Expense Statistics">
+          <div className="title">Card Expense Statistics"</div>
+          <div className="mobile-center">
             <img src="/images/creditcard/chart1.svg" alt="chart" className="expense-chart" />
-          </Card>
+          </div>
         </Col>
         <Col xs={24} lg={16}>
           <div title="card-list">
@@ -83,31 +83,33 @@ const CreditCardsPage = () => {
       {/* Add New Card + Settings */}
       <Row gutter={16} style={{ marginTop: 24 }}>
         <Col xs={24} lg={14}>
-          <Card title="Add New Card">
+          <div className="title">Add New Card</div>
+          <Card>
             <p className="desc">
               Credit Card generally means a plastic card issued by Scheduled Commercial Banks assigned to a Cardholder, with a credit limit, that can be used to purchase goods and services on credit or obtain cash advances.
             </p>
             <Row gutter={16}>
               <Col xs={24} md={12}>
-                <Input placeholder="Card Type" />
+                <Input placeholder="Card Type" size="large" />
               </Col>
               <Col xs={24} md={12}>
-                <Input placeholder="Name On Card" defaultValue="My Cards" />
+                <Input placeholder="Name On Card" defaultValue="My Cards" size="large" />
               </Col>
             </Row>
             <Row gutter={16} style={{ marginTop: 12 }}>
               <Col xs={24} md={12}>
-                <Input placeholder="Card Number" />
+                <Input placeholder="Card Number" size="large" />
               </Col>
               <Col xs={24} md={12}>
-                <DatePicker style={{ width: "100%" }} placeholder="Expiration Date" />
+                <DatePicker style={{ width: "100%" }} placeholder="Expiration Date" size="large"/>
               </Col>
             </Row>
             <Button type="primary" style={{ marginTop: 16 }}>Add Card</Button>
           </Card>
         </Col>
         <Col xs={24} lg={10}>
-          <Card title="Card Setting">
+          <div className="title">Card Setting</div>
+          <Card>
             {settings.map((s) => (
               <div className="setting-item" key={s.id}>
                 <img src={s.icon} alt="icon" />
@@ -120,7 +122,7 @@ const CreditCardsPage = () => {
           </Card>
         </Col>
       </Row>
-    </div>
+    </div >
   );
 };
 

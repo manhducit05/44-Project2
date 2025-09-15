@@ -1,9 +1,10 @@
 .title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   color: #343C6A;
   margin-bottom: 20px;
   /* $text-dark */
+  margin-top: 15px;
 }
 
 .home .section-header {
@@ -231,6 +232,9 @@
   .person img {
     width: 50px;
   }
+  .title {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 1043.98px) {
@@ -255,4 +259,41 @@
     margin-top: 30px;
   }
 
+  .home .card {
+    width: 265px;
+    height: 170px;
+  }
+  .title {
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 744px) {
+  .cards-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* tránh scroll dọc */
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  .cards-row {
+    display: flex;
+    flex-wrap: nowrap;
+    /* bắt buộc 1 hàng */
+    gap: 16px;
+  }
+
+  .scroll-card {
+    flex: 0 0 auto;
+    /* giữ nguyên width, không co lại */
+    width: 280px;
+    /* hoặc % tùy bạn */
+  }
+
+  .balance img {
+    width: 325px;
+    height: 254px;
+  }
 }

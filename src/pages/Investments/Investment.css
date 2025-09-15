@@ -1,3 +1,12 @@
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #343C6A;
+  margin-bottom: 20px;
+  /* $text-dark */
+  margin-top: 15px;
+}
+
 .investment-page {
   padding: 20px;
 }
@@ -120,11 +129,20 @@
   .stat-card .stat-money {
     font-size: 16px;
   }
+
+  .title {
+    font-size: 18px;
+  }
+
 }
 
 @media(max-width:1043.98px) {
   .stat-card .stat-icon {
     width: 45px;
     height: 45px;
+  }
+
+  .title {
+    font-size: 16px;
   }
 }

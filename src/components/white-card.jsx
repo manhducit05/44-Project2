@@ -1,5 +1,5 @@
 import './white-card.css'
-const WhiteCard = () => {
+const WhiteCard = ({ chipSrc }) => {
   return (
     <div className="card white-card">
       <div className="flex-card">
@@ -7,7 +7,7 @@ const WhiteCard = () => {
           <p className="balance">Balance</p>
           <h2 className="money">$5,756</h2>
         </div>
-        <img className="chip-card" src="/images/home/Chip_Card2.svg" alt="chip-card" />
+        <img className="chip-card" src={chipSrc} alt="chip-card" />
       </div>
       <div className="flex-card">
         <p className="holder">CARD HOLDER<br /><span className="name">Eddy Cusuma</span></p>

@@ -19,6 +19,7 @@ const TransactionsPage = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   const data = [
     {
       key: 1,
@@ -119,16 +120,32 @@ const TransactionsPage = () => {
         <Row justify="space-between" gutter={40}>
           <Col xs={24} lg={16}>
             <div className="dual-card mobile-center">
-              <Row gutter={50} wrap={false}>
-                <Col>
-                  <div className="title">My Cards</div>
-                  <BlueCard />
-                </Col>
-                <Col>
-                  <div className="title see-all">See All</div>
-                  <WhiteCard />
-                </Col>
-              </Row>
+              {isMobile ? (
+                <div className="cards-scroll">
+                  <div className="cards-row">
+                    <div className="scroll-card">
+                      <div className="title">My Cards</div>
+                      <BlueCard />
+                    </div>
+                    <div className="scroll-card">
+                      <div className="title see-all">See All</div>
+                      <WhiteCard chipSrc="/images/home/Chip_Card3.svg" />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                // 👉 Desktop
+                <Row gutter={50} wrap={false}>
+                  <Col>
+                    <div className="title">My Cards</div>
+                    <BlueCard />
+                  </Col>
+                  <Col>
+                    <div className="title see-all">See All</div>
+                    <WhiteCard chipSrc="/images/home/Chip_Card3.svg" />
+                  </Col>
+                </Row>
+              )}
             </div>
           </Col>
           <Col xs={24} lg={8}>
