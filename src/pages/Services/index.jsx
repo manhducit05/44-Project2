@@ -83,36 +83,34 @@ const ServicesPage = () => {
       {/* Services List */}
       <div className="services-section">
         <div className="title">Bank Services List</div>
-        <Card>
-          {services.map((item) => (
-            <div className="service-item" key={item.id}>
-              <div className="service-left">
-                <img src={item.icon} alt="icon" />
-                <div className="service-info">
-                  <div className="item-title">{item.title}</div>
-                  <div className="item-desc">{item.desc}</div>
-                </div>
+        {services.map((item) => (
+          <div className="service-item" key={item.id}>
+            <div className="service-left">
+              <img src={item.icon} alt="icon" />
+              <div className="service-info">
+                <div className="item-title">{item.title}</div>
+                <div className="item-desc">{item.desc}</div>
               </div>
-              <div className="service-cols">
-                <div className="item-data">
-                  <div className="item-title">Lorem Ipsum</div>
-                  <div className="item-desc">Many publishing</div>
-                </div>
-                <div className="item-data">
-                  <div className="item-title">Lorem Ipsum</div>
-                  <div className="item-desc">Many publishing</div>
-                </div>
-                <div className="item-data">
-                  <div className="item-title">Lorem Ipsum</div>
-                  <div className="item-desc">Many publishing</div>
-                </div>
-              </div>
-              <Button type="default" shape="round">
-                View Details
-              </Button>
             </div>
-          ))}
-        </Card>
+            <div className="service-cols hide-mobile">
+              <div className="item-data">
+                <div className="item-title">Lorem Ipsum</div>
+                <div className="item-desc">Many publishing</div>
+              </div>
+              <div className="item-data">
+                <div className="item-title">Lorem Ipsum</div>
+                <div className="item-desc">Many publishing</div>
+              </div>
+              <div className="item-data">
+                <div className="item-title">Lorem Ipsum</div>
+                <div className="item-desc">Many publishing</div>
+              </div>
+            </div>
+            <Button color="primary" variant="text">
+              View Detail
+            </Button>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,8 +1,6 @@
-import React from "react";
-import { Row, Col, Card, Typography } from "antd";
+import { Row, Col, Card } from "antd";
 import "./Investment.css";
 
-const { Title, Text } = Typography;
 
 const investments = [
   {
@@ -48,37 +46,43 @@ const InvestmentPage = () => {
       {/* Top Stats */}
       <Row gutter={16}>
         <Col xs={24} lg={8}>
-          <Card className="stat-card">
-            <div className="stat-content">
-              <img src="/images/investment/moneyicon.svg" alt="stat" className="stat-icon" />
-              <div>
-                <div className="stat-title">Total Invested Amount</div>
-                <div className="stat-money">$150,000</div>
+          <div className="mobile-center">
+            <Card className="stat-card">
+              <div className="stat-content">
+                <img src="/images/investment/moneyicon.svg" alt="stat" className="stat-icon" />
+                <div>
+                  <div className="stat-title">Total Invested Amount</div>
+                  <div className="stat-money">$150,000</div>
+                </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </div>
         </Col>
         <Col xs={24} lg={8}>
-          <Card className="stat-card">
-            <div className="stat-content">
-              <img src="/images/investment/percenticon.svg" alt="stat" className="stat-icon" />
-              <div>
-                <div className="stat-title">Number of Investments</div>
-                <div className="stat-money">1,250</div>
+          <div className="mobile-center">
+            <Card className="stat-card">
+              <div className="stat-content">
+                <img src="/images/investment/percenticon.svg" alt="stat" className="stat-icon" />
+                <div>
+                  <div className="stat-title">Number of Investments</div>
+                  <div className="stat-money">1,250</div>
+                </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </div>
         </Col>
         <Col xs={24} lg={8}>
-          <Card className="stat-card">
-            <div className="stat-content">
-              <img src="/images/investment/transfericon.svg" alt="stat" className="stat-icon" />
-              <div>
-                <div className="stat-title">Rate of Return</div>
-                <div className="stat-money">+5.8%</div>
+          <div className="mobile-center">
+            <Card className="stat-card">
+              <div className="stat-content">
+                <img src="/images/investment/transfericon.svg" alt="stat" className="stat-icon" />
+                <div>
+                  <div className="stat-title">Rate of Return</div>
+                  <div className="stat-money">+5.8%</div>
+                </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </div>
         </Col>
       </Row>
 

@@ -38,10 +38,10 @@ const SettingsPage = () => {
           requiredMark="optional"
         >
           <Row gutter={16}>
-            <Col span={4}>
+            <Col xs={24} lg={4}>
               <Upload
                 showUploadList={false}
-                beforeUpload={() => false} // ngăn upload thật
+                beforeUpload={() => false}
                 onChange={({ fileList }) => {
                   if (fileList && fileList[0]) {
                     const file = fileList[0].originFileObj;
@@ -53,132 +53,86 @@ const SettingsPage = () => {
                 }}
               >
                 <img
+                  className="avatar"
                   src={avatar}
                   alt="avatar"
                   style={{
-                    width: 100,
-                    height: 100,
                     borderRadius: "50%",
                     objectFit: "cover",
                   }}
                 />
                 <Button className="change-avtar-button">
-                  <img src='/images/change-avatar.svg' alt='change-avatar-icon' />
+                  <img src="/images/change-avatar.svg" alt="change-avatar-icon" />
                 </Button>
               </Upload>
-
             </Col>
 
-            <Col span={20}>
-              <Row gutter={16}>
-                <Col span={12}>
-                  <Form.Item
-                    label="Your Name"
-                    name="name"
-                    rules={[{ required: true, message: "Vui lòng nhập tên" }]}
-                  >
-                    <Input size="large" placeholder="Charlene Reed" name="name" />
+            <Col xs={24} lg={20}>
+              <Row gutter={[16, 16]}>
+                <Col xs={24} lg={12}>
+                  <Form.Item label="Your Name" name="name" rules={[{ required: true }]}>
+                    <Input size="large" placeholder="Charlene Reed" />
                   </Form.Item>
                 </Col>
-                <Col span={12}>
-                  <Form.Item
-                    label="User Name"
-                    name="username"
-                    rules={[
-                      { required: true, message: "Vui lòng nhập username" },
-                    ]}
-                  >
-                    <Input size="large" placeholder="Charlene Reed" name="username" />
+                <Col xs={24} lg={12}>
+                  <Form.Item label="User Name" name="username" rules={[{ required: true }]}>
+                    <Input size="large" placeholder="Charlene Reed" />
                   </Form.Item>
                 </Col>
 
-                <Col span={12}>
-                  <Form.Item
-                    label="Email"
-                    name="email"
-                    rules={[{ required: true, message: "Vui lòng nhập email" }]}
-                  >
-                    <Input size="large" placeholder="charlenereed@gmail.com" name="email" />
+                <Col xs={24} lg={12}>
+                  <Form.Item label="Email" name="email" rules={[{ required: true }]}>
+                    <Input size="large" placeholder="charlenereed@gmail.com" />
                   </Form.Item>
                 </Col>
-                <Col span={12}>
-                  <Form.Item
-                    label="Password"
-                    name="password"
-                    rules={[
-                      { required: true, message: "Vui lòng nhập mật khẩu" },
-                    ]}
-                  >
-                    <Input.Password size="large" placeholder="********" name="password" />
+                <Col xs={24} lg={12}>
+                  <Form.Item label="Password" name="password" rules={[{ required: true }]}>
+                    <Input.Password size="large" placeholder="********" />
                   </Form.Item>
                 </Col>
 
-                <Col span={12}>
-                  <Form.Item
-                    label="Date of Birth"
-                    name="dob"
-                    rules={[
-                      { required: true, message: "Vui lòng chọn ngày sinh" },
-                    ]}
-                  >
+                <Col xs={24} lg={12}>
+                  <Form.Item label="Date of Birth" name="dob" rules={[{ required: true }]}>
                     <DatePicker size="large" style={{ width: "100%" }} />
                   </Form.Item>
                 </Col>
-                <Col span={12}>
+                <Col xs={24} lg={12}>
                   <Form.Item
                     label="Present Address"
                     name="presentAddress"
-                    rules={[
-                      { required: true, message: "Vui lòng nhập địa chỉ" },
-                    ]}
+                    rules={[{ required: true }]}
                   >
-                    <Input size="large" placeholder="San Jose, California, USA" name="address" />
+                    <Input size="large" placeholder="San Jose, California, USA" />
                   </Form.Item>
                 </Col>
 
-                <Col span={12}>
+                <Col xs={24} lg={12}>
                   <Form.Item
                     label="Permanent Address"
                     name="permanentAddress"
-                    rules={[
-                      { required: true, message: "Vui lòng nhập địa chỉ" },
-                    ]}
+                    rules={[{ required: true }]}
                   >
-                    <Input size="large" placeholder="San Jose, California, USA" name="address" />
+                    <Input size="large" placeholder="San Jose, California, USA" />
                   </Form.Item>
                 </Col>
-                <Col span={12}>
-                  <Form.Item
-                    label="City"
-                    name="city"
-                    rules={[
-                      { required: true, message: "Vui lòng nhập thành phố" },
-                    ]}
-                  >
-                    <Input size="large" placeholder="San Jose" name="city" />
+                <Col xs={24} lg={12}>
+                  <Form.Item label="City" name="city" rules={[{ required: true }]}>
+                    <Input size="large" placeholder="San Jose" />
                   </Form.Item>
                 </Col>
 
-                <Col span={12}>
+                <Col xs={24} lg={12}>
                   <Form.Item
                     label="Postal Code"
                     name="postalCode"
-                    rules={[
-                      { required: true, message: "Vui lòng nhập mã bưu điện" },
-                    ]}
+                    rules={[{ required: true }]}
                   >
-                    <Input size="large" placeholder="45962" name="postal" />
+                    <Input size="large" placeholder="45962" />
                   </Form.Item>
                 </Col>
-                <Col span={12}>
-                  <Form.Item
-                    label="Country"
-                    name="country"
-                    rules={[
-                      { required: true, message: "Vui lòng nhập quốc gia" },
-                    ]}
-                  >
-                    <Input size="large" placeholder="USA" name="country" />
+                <Col xs={24} lg={12}>
+                  <Form.Item label="Country" name="country" rules={[{ required: true }]}>
+                    <Input size="large" placeholder="USA" />
                   </Form.Item>
                 </Col>
               </Row>
@@ -187,7 +141,7 @@ const SettingsPage = () => {
           <Button className="save-button">
             Save
           </Button>
-        </Form>
+        </Form >
       ),
     },
     {

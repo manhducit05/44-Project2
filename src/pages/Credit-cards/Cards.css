@@ -154,6 +154,12 @@
   font-size: 15px;
 }
 
+.add-card-desc {
+  font-size: 16px;
+  font-weight: 400;
+  color: #718EBF;
+}
+
 @media(max-width:1439.98px) {
   .expense-chart {
     width: 261px;
@@ -186,6 +192,10 @@
 
   .setting-desc {
     font-size: 11px;
+  }
+
+  .add-card-desc {
+    font-size: 12px;
   }
 }
 

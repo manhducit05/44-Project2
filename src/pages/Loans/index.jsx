@@ -1,9 +1,7 @@
-import React from "react";
-import { Row, Col, Card, Button, Table, Typography } from "antd";
+import { Row, Col, Card, Button, Table } from "antd";
 import { useEffect, useState } from 'react'
 import "./Loans.css";
 
-const { Title, Text } = Typography;
 const loanStats = [
   {
     icon: "/images/loans/icon1.svg",
@@ -138,7 +136,7 @@ const LoansPage = () => {
 
       {/* Loans Table */}
       <div className="loans-section">
-        <Title level={5}>Active Loans Overview</Title>
+        <div className="title">Active Loans Overview</div>
         <Table
           columns={isSmall ? mobileColumns : fullColumns}
           dataSource={loanData}

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col, Card, Button, Input, DatePicker } from "antd";
+import { useState, useEffect } from "react";
+import { Row, Col, Card, Button, Input, DatePicker, Form } from "antd";
 import "./Cards.css";
 import BlueCard from "../../components/blue-card";
 import WhiteCard from "../../components/white-card";
@@ -85,26 +85,41 @@ const CreditCardsPage = () => {
         <Col xs={24} lg={14}>
           <div className="title">Add New Card</div>
           <Card>
-            <p className="desc">
+            <p className="add-card-desc">
               Credit Card generally means a plastic card issued by Scheduled Commercial Banks assigned to a Cardholder, with a credit limit, that can be used to purchase goods and services on credit or obtain cash advances.
             </p>
-            <Row gutter={16}>
-              <Col xs={24} md={12}>
-                <Input placeholder="Card Type" size="large" />
-              </Col>
-              <Col xs={24} md={12}>
-                <Input placeholder="Name On Card" defaultValue="My Cards" size="large" />
-              </Col>
-            </Row>
-            <Row gutter={16} style={{ marginTop: 12 }}>
-              <Col xs={24} md={12}>
-                <Input placeholder="Card Number" size="large" />
-              </Col>
-              <Col xs={24} md={12}>
-                <DatePicker style={{ width: "100%" }} placeholder="Expiration Date" size="large"/>
-              </Col>
-            </Row>
-            <Button type="primary" style={{ marginTop: 16 }}>Add Card</Button>
+            <Form layout="vertical" className="custom-form">
+              <Row gutter={16}>
+                <Col xs={24} md={12}>
+                  <Form.Item label="Card Type" name="cardType">
+                    <Input placeholder="Classic" size="large" />
+                  </Form.Item>
+                </Col>
+                <Col xs={24} md={12}>
+                  <Form.Item label="Name On Card" name="nameOnCard">
+                    <Input defaultValue="My Cards" placeholder="Name On Card" size="large" />
+                  </Form.Item>
+                </Col>
+              </Row>
+
+              <Row gutter={16} style={{ marginTop: 12 }}>
+                <Col xs={24} md={12}>
+                  <Form.Item label="Card Number" name="cardNumber">
+                    <Input placeholder="**** **** **** ****" size="large" />
+                  </Form.Item>
+                </Col>
+                <Col xs={24} md={12}>
+                  <Form.Item label="Expiration Date" name="expirationDate">
+                    <DatePicker
+                      style={{ width: "100%" }}
+                      placeholder="25 January 2025"
+                      size="large"
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
+            </Form>
+            <Button size="large" type="primary" style={{ marginTop: 16 }}>Add Card</Button>
           </Card>
         </Col>
         <Col xs={24} lg={10}>

@@ -8,11 +8,7 @@
   position: relative;
 }
 
-.settings-page .change-avtar-button {
-  position: absolute;
-  left: 75px;
-  top: 75px;
-}
+
 
 .settings-page img {
   position: absolute;
@@ -59,10 +55,56 @@
   /* chữ to hơn 1 chút */
 }
 
+.avatar {
+  width: 130px;
+  height: 130px;
+}
+
+.settings-page .change-avtar-button {
+  position: absolute;
+  left: 90px;
+  top: 90px;
+}
+
 @media(max-width:1439.98px) {
   .settings-page .ant-form-item-label>label {
     font-size: 13px;
   }
 }
 
-@media(max-width:1023.98px) {}
+@media(max-width:991.98px) {
+
+  .avatar {
+    width: 170px;
+    height: 170px;
+  }
+
+  .settings-page .change-avtar-button {
+    left: 120px;
+    top: 125px;
+  }
+
+  .settings-page .change-avtar-button img {
+    width: 39px;
+    height: 39px;
+  }
+
+  .settings-page .ant-upload {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .settings-page img.avatar {
+    position: static;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .settings-page .change-avtar-button {
+    position: absolute;
+    bottom: 10px;
+    right: calc(50% - 65px);
+  }
+}

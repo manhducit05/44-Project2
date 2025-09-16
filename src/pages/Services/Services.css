@@ -1,5 +1,10 @@
-.services-page {
-  padding: 20px;
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #343C6A;
+  margin-bottom: 20px;
+  /* $text-dark */
+  margin-top: 15px;
 }
 
 .service-stat {
@@ -135,14 +140,24 @@
   .service-left img {
     width: 45px;
   }
+
+  .title {
+    font-size: 18px;
+  }
 }
 
-@media(max-width:1023.98px) {}
+@media(max-width:1023.98px) {
+  .hide-mobile {
+    display: none;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+}
 
 @media (max-width: 768px) {
   .service-item {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 12px;
   }
 

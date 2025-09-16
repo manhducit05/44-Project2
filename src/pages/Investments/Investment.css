@@ -7,9 +7,6 @@
   margin-top: 15px;
 }
 
-.investment-page {
-  padding: 20px;
-}
 
 .stat-card {
   border-radius: 12px;
@@ -19,8 +16,14 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 250px;
+
 }
 
+.mobile-center {
+  display: flex;
+  justify-content: center;
+}
 
 
 .chart-img {
