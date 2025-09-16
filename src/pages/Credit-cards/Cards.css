@@ -197,6 +197,16 @@
   .add-card-desc {
     font-size: 12px;
   }
+
+  .cards-page .ant-form-item-label>label {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+.cards-page .ant-form-item-label>label {
+  font-size: 16px;
+  font-weight: 400;
 }
 
 @media(max-width:1023.98px) {
@@ -223,6 +233,15 @@
 
   .setting-desc {
     font-size: 12px;
+  }
+
+  .cards-page .ant-form-item-label>label {
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .card-list-item {
+    justify-content: start;
   }
 }
 
